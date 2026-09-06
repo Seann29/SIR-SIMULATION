@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Pays</title>
+</head>
+<body>
+            <h1 id="titre"> EPIDEMIC SIMULATOR</h1>
+            <img  id='profile' src="image/utilisateur.png" alt="">
+    <nav >
+        <div class="navigation" >
+            <div id="pays" >
+                <a href="pays.html">
+                    <img src="./image/terre-europe.png" alt="" onclick="">
+                    <p class="navInfo">pays</p>                    
+                </a>
+            </div>
+            <div id="methode">
+                <a href="utilisateurs.html">
+                     <img src="./image/methode.png" alt="">
+                     <p class="navInfo">simulation</p>                   
+                </a>
+            </div>
+            <div id="simulation">
+                <a href="index.html">
+                    <img src="./image/graphique-line-up.png" alt="">
+                    <p class="navInfo">graphique</p>                       
+                </a>
+            </div>                        
+        </div>
+    </nav>
+
+
+<main>
+    <div class="PaysEntrer">
+        <div class="Input">
+            <label for="paysName"> nom du  Pays</label>
+            <input type="text" id="paysName" placeholder=" entrer le Pays">
+        </div>
+
+        <div class="Input">
+            <label for="population">population</label>
+            <input type="number" name="" id="population" placeholder=" population">
+        </div>
+        </div>
+        
+    <button id="ajout">
+        <img src="image/plus.png" alt=""> 
+        ajouter
+    </button>
+    <h1>PAYS AJOUTES</h1>
+    <div class="paysContenairs">
+        <div class="element">
+            <img src="./image/pins-de-la-carte-des-etats-unis.png" alt="">
+            <div class="info">
+                <p>MADAGASCAR</p>
+                <div class="popuInfo">
+                    <img src="./image/population.png" alt="">
+                    <p>2000</p>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <img src="./image/pins-de-la-carte-des-etats-unis.png" alt="">
+            <div class="info">
+                <p>MADAGASCAR</p>
+                <div class="popuInfo">
+                    <img src="./image/population.png" alt="">
+                    <p>2000</p>
+                </div>
+            </div>
+        </div>
+    </div>        
+</main>
+<script src="Main.js"></script>
+<script src="chart.umd.js"></script>
+<script src="Model.js"></script>
+<script src="pays.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+    "PaysListe":[{"paysName":"Madagascar","population":30000000},{"paysName":"France","population":25000000},{"paysName":"USA","population":100000000}],
+    "Simulations":[{"userName":"seann","paysName":"Madagascar","simulationName":"corona test","parametre":{"guerison":0.5,"transmission":1.5,"duree":360}}],
+    "utilisateurs":[]
+}

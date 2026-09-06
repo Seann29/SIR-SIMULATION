@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+            <h1 id="titre">EPIDEMIC SIMULATOR</h1>
+            <img  id='profile' src="image/utilisateur.png" alt="">
+    <nav>
+        <div class="navigation" >
+            <div id="pays" >
+                <a href="pays.html">
+                    <img src="./image/terre-europe.png" onclick="">
+                    <p class="navInfo">pays</p>                    
+                </a>
+            </div>
+            <div id="methode">
+                <a href="utilisateurs.html">
+                     <img src="./image/methode.png" alt="">
+                     <p class="navInfo">simulation</p>                   
+                </a>
+            </div>
+            <div id="simulation">
+                <a href="index.html">
+                    <img src="./image/graphique-line-up.png" alt="">
+                    <p class="navInfo">graphique</p>                       
+                </a>
+            </div>                        
+        </div>
+    </nav>
+
+
+
+    <main class="mainIndex">
+        <h1>simulation</h1>
+        
+        <div class="principale">   
+            <div class="valeursEntre">
+                    <div class="Input">
+                    <label for="simulationName">simulation name</label>
+                    <input type="text" id="simulationName">
+                    </div>
+                    <div class="paysChoix">
+                        <label for="paysSelect">pays</label>
+                            <select name="" id="paysSelect">
+                        </select>
+                        <label for="popu"> population</label>
+                        <input type="text" name="" id="popu">
+                    </div>
+
+                    <div class="parametre">
+                        <label for="gamma"> taux de transmission</label>
+                        <input type="number" id="gamma">
+                        <label for="beta"> taux de guerison</label>
+                        <input type="number" id="beta">
+                    </div>
+                    <div class="Input">
+                        <label for="infecte"> nom d'utilisateur</label>
+                        <input type="text" id="infecte" >
+                    </div>
+
+                    <div class="Input">
+                        <label for="duree"> duree (en jours)</label>
+                        <input type="number" id="duree" >
+                    </div>
+
+            </div>
+            <canvas class="graphe" id="myChart"></canvas>
+        </div>
+     <div class="lancer">
+        <div class="lancerSimu">
+            <img src="./image/cercle-de-jeu.png" alt="">
+            <p>Lancer la simulation</p>
+        </div>
+    </div>
+     </main>
+
+<script src="chart.umd.js"></script>
+<script src="Model.js"></script>
+<script src="Main.js"></script>
+<script src="graphe.js"></script>
+
+
+</body>
+</html>
