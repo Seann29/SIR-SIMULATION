@@ -20,7 +20,7 @@ var Simulations=[];
     try{
         var pays=await fetch("data.json");
         var  res = await pays.json();
-        var SIR = JSON.parse(res);
+        var SIR = res;
         console.log(SIR);
         PaysListe = SIR.PaysListe || [];
         Simulations = SIR.Simulations || [];

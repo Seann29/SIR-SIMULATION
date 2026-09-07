@@ -44,6 +44,9 @@ nav{
     right: 30px;
 }
 
+h1{
+    text-decoration: underline;
+}
 
 a {
     display: flex;
@@ -383,7 +386,7 @@ h2{
 
 #myChart{
     display: block;
-    width: 92%!important;
+    width: 92%;
 }
 
 .valeursEntre{
@@ -413,8 +416,16 @@ label{
     padding: 0.6rem;
     border: transparent;
 }
+ .PaysEntrer > .Input > input{
+    padding: 1rem;
+    background-color: white;
+}
 
 .element{
-    width: 20rem;
+    width: 19rem;
+}
+
+.users{
+    width: 320px;
 }
 }
