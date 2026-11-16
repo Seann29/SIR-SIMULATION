@@ -2,6 +2,7 @@ navigation.addEventListener("mouseover",navAffiche);
 navigation.addEventListener("mouseout", navDisp);
 const userContenair=document.querySelector(".userContenair");
 const navp=document.querySelectorAll(".navInfo");
+const play=document.querySelectorAll(".play");
 var Simulations=[];
 
  async function load(){
@@ -58,7 +59,7 @@ function AfficherSimulations(){
                     <h2>${e.simulationName}</h2>
                     <p>${e.paysName}</p>
                  </div>
-                <button class="play" onclick="changePage()">
+                <button class="play">
                     <img src="./image/cercle-de-jeu.png" alt="">
                     <p>lancer</p>
                  </button>
@@ -69,7 +70,30 @@ function AfficherSimulations(){
 
 }
 
- function changePage(){
+
+
+ function changePage(element){
+        localStorage.setItem("temporSIR",JSON.stringify(
+        {
+            simu:element
+        }
+    ))
     window.open("index.html");
  }
+ 
+async function init() {
+    await load();
+    AfficherSimulations();
+
+    const boutonsPlay = userContenair.querySelectorAll(".play");
+    boutonsPlay.forEach((bouton, i) => {
+        bouton.addEventListener("click", () => {
+            changePage(Simulations[i].parametre);
+        });
+    });
+}
+
+init();
+
+
  AfficherSimulations()

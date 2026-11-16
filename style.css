@@ -162,6 +162,13 @@ input:focus{
 .mainIndex > h1{
     margin: 5px;
 }
+.action{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 0.5rem;
+}
+
 .lancer{
     position: relative;
     display: flex;
@@ -177,17 +184,31 @@ input:focus{
     padding: 10px;
     transition: all 0.2s ;
 }
-.lancerSimu > img{
+.lancerSimu > img,#sauvegarde > img{
     width: 15px;
     height: 15px;
     margin: 0;
 }
-.lancerSimu > p{
+.lancerSimu > p,#sauvegarde > p{
     margin: 0;
 }
-.lancerSimu:hover{
-    transform: scale(1.1);
+.lancerSimu:hover,#sauvegarde:hover{
+    transform: scale(1.1) ;
+    
 }
+#sauvegarde{
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    width: 182px;
+    justify-content: center;
+    transition: all 0.2s ;
+}
+
 
 
 /* Pays css */
@@ -380,6 +401,7 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform: scale(0.89);
     align-items: center;
     gap: 5px;
 }

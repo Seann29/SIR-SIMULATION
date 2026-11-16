@@ -3,6 +3,10 @@ var Simulations=[];
 var utilisateurs;
 var test;
 
+
+
+
+
  async function load(){
     // Try to load from localStorage first for persistence
     try{
@@ -58,6 +62,7 @@ function initializeDOM(){
     const infecteId=document.getElementById('infecte');
     const dureeId=document.getElementById('duree');
     const lancer=document.querySelector(".lancerSimu");
+    const sauvegarde=document.getElementById("sauvegarde");
 
     try {
        
@@ -95,16 +100,16 @@ function initializeDOM(){
     }
 
     // Initialiser la simulation par défaut
-    test = Euler(new Simulation("seann",new Pays("madagascar",5000000),"test"),new Parametre("test",0.8,0.1,300));
+    const temporSIR=JSON.parse(localStorage.getItem("temporSIR"));
+    test = temporSIR!=null?Euler(new Simulation("seann",new Pays("madagascar",temporSIR.simu.popu ),"test"),new Parametre("test",temporSIR.simu.guerison,temporSIR.simu.transmission,temporSIR.simu.duree)):Euler(new Simulation("seann",new Pays("madagascar",5000000),"test"),new Parametre("test",0.8,0.1,300));
     if(typeof afficherSimulation === 'function'){
         afficherSimulation(test);
     }
+
+         sauvegarde.addEventListener("click",()=>saveSimulation("test",paysId.value,simulationNameId.value,{guerison:gammaId.value,transmission:betaId.value,duree:dureeId.value,popu:popuId.value}))
 }
 
-window.addEventListener("DOMContentLoaded",()=>{
-    load();
-    initializeDOM();
-})
+
 
 function Suspect(S,I,B,N){
     return -1*B*S*I/N;
@@ -169,6 +174,26 @@ function AfficherGraphe(){
         e.style.fontSize="0";
     })
  }
+
+ function saveSimulation(userName,paysName,simulationName,parametre){
+    if(userName && paysName && simulationName && parametre){
+        Simulations.push(new Simulation(userName,paysName,simulationName,parametre));
+    }
+    else{
+        alert("completer tout les champs")
+    }
+    save()
+    
+
+ }
+ 
+async function initializeApp(){
+    await load();
+    initializeDOM();
+}
+
+initializeApp();
+
 
 
 
