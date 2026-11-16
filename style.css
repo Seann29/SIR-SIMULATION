@@ -401,7 +401,7 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transform: scale(0.89);
+    transform: scale(0.82);
     align-items: center;
     gap: 5px;
 }
